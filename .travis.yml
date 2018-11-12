@@ -3,24 +3,24 @@ dist: xenial
 
 language: generic
 
-addons:
-  apt:
-    sources:
-    - sourceline: 'ppa:octave/stable'   ## without this, it's octave 4.0.0
-    packages:
-    - coinor-libipopt-dev
-    - liboctave-dev
-    - octave        # octave 4.2.2
-    update: true
+# addons:
+#   apt:
+#     sources:
+#     - sourceline: 'ppa:octave/stable'   ## without this, it's octave 4.0.0
+#     packages:
+#     - coinor-libipopt-dev
+#     - liboctave-dev
+#     - octave        # octave 4.2.2
+#     update: true
 
-# install:
-# # https://github.com/travis-ci/travis-ci/issues/9080
-# - sudo systemctl disable apt-daily.timer
-# - sudo killall apt.systemd.daily || true
-# 
-# - sudo apt-add-repository -y ppa:octave/stable
-# - sudo apt-get update -qq
-# - sudo apt-get install -qq coinor-libipopt-dev octave liboctave-dev
+install:
+# https://github.com/travis-ci/travis-ci/issues/9080
+- sudo systemctl disable apt-daily.timer
+- sudo killall apt.systemd.daily || true
+
+- sudo apt-add-repository -y ppa:octave/stable
+- sudo apt-get update -qq
+- sudo apt-get install -qq coinor-libipopt-dev octave liboctave-dev
 
 env:
   global:
