@@ -26,7 +26,7 @@ cwd = pwd;
 
 %% test with empty path (do NOT cd anywhere)
 t = 'ab = feval_w_path(<empty path>, fname, a, b)';
-rv = feval_w_path('', 't_ok', 1, 'true');
+rv = feval_w_path('.', 't_ok', 1, 'true');
 t_ok(strcmp(cwd, pwd), [t ' : cwd unchanged']);
 t_is(rv, 1, 15, t);
 
